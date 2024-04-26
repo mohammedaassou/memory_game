@@ -1,0 +1,89 @@
+
+:root{
+    --width:100px;
+}
+
+.parent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#game{
+    display: grid;
+    grid-template-columns: repeat(4 , var(--width));
+    margin: 3rem;
+    gap: 1rem;
+}
+
+#game div{
+    transition: .2s ease-in;
+    backface-visibility: hidden;
+}
+
+
+.carteImage{
+    width: var(--width);
+    height: var(--width);
+    position: relative;
+}
+
+.back{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    box-shadow: 1px 1px 0 1px rgba(5, 5, 5, 0.214);
+
+}
+
+.front{
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.front img{
+    background-color: white;
+}
+/* clsss if i click  */
+
+.rotatePositive{
+    transform: rotateY(180deg);
+}
+
+.rotate{
+    transform: rotateY(-180deg);
+}
+
+
+.rotateNegative{
+    transform: rotateY(-180deg);
+}
+
+img{
+    width: var(--width);
+    height: var(--width);
+}
+
+#restart{
+    border-radius: 1rem;
+    background-color: white;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    border: 1px solid rgba(238, 18, 18, 0.507);
+    color: rgba(255, 0, 0, 0.664);
+    cursor: no-drop;
+}
+
+.restartStyle{
+    border-radius: 1rem;
+    background-color: white;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    border: 1px solid rgba(238, 18, 18, 0.507);
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}

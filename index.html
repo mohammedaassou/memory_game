@@ -1,0 +1,125 @@
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+</head>
+
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #home{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 50vh;
+        width: 50%;
+        padding: 2rem;
+        border-radius: 2rem;
+        box-shadow: 2px 1px 20px 2px rgba(8, 1, 1, 0.431);
+    }
+    #home h1{
+    animation: shadow 6s linear infinite alternate;
+    font-style: italic;
+    padding: 1rem;
+    color: rgba(0, 0, 0, 0.673);
+    }
+
+    @keyframes shadow {
+        to{
+            text-shadow: 1px 0 10px red;
+        }
+    }
+   
+   #niveux{
+    padding: 1rem;
+    border-radius: 1rem;
+    outline: none;
+    user-select: none;
+    width: 40vh;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    color: rgba(0, 128, 0, 0.504);
+    cursor: pointer;
+    font-size: 1.4rem;
+   }
+
+   /* #niveux:wid */
+
+   #niveux option{
+    /* color: red; */
+    font-weight: bold;
+    font-size: 1rem;
+   }
+
+   #start{
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.438);
+    background-color: transparent;
+    margin-top: 2rem;
+    transition: .3s linear;
+    user-select: none;
+   }
+   #start a{
+    text-decoration: none;
+    color: rgba(255, 0, 0, 0.487);
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+   }
+   #start:hover{
+    color: red;
+    box-shadow: 1px 1px 20px 1px rgba(255, 0, 0, 0.568);
+   }
+
+
+
+</style>
+<body>
+    <div id="home">
+        <h1>Memory Game</h1>
+        <select id="niveux">
+            <option value="Easy" >Easy</option>
+            <option value="Middle" selected>Middle</option>
+            <option value="Hard">Hard</option>
+        </select>
+        <button id="start"><a href="game.html">Start</a></button>
+    </div>
+
+    <script >
+    
+let dure = 0;
+let nivs = ["Easy" , "Middle" , "Hard"];
+
+document.getElementById("niveux").onchange = niv
+
+
+function niv(){
+    switch (document.getElementById("niveux").value){
+        case nivs[0] : dure = 1500;
+        break;
+        case nivs[1] : dure = 1000;
+        break;
+        case nivs[2] : dure = 300;
+        break;
+    }
+    window.localStorage.setItem("dure" , dure);
+}
+
+niv();
+
+console.log(dure);
+
+    </script>
+</body>
+</html>
